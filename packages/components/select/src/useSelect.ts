@@ -576,6 +576,7 @@ export const useSelect = (props, states: States, ctx) => {
   }, debounce.value)
 
   const debouncedQueryChange = lodashDebounce((e) => {
+    console.log(e)
     handleQueryChange(
       (e.target.shadowRoot && e.composed
         ? e.composedPath()[0] || e.target

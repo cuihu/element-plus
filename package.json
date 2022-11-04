@@ -40,7 +40,8 @@
     "docs:crowdin-credentials": "pnpm run -C docs crowdin-credentials",
     "stub": "pnpm run -r --parallel stub",
     "prepare": "husky install",
-    "postinstall": "pnpm stub && concurrently \"pnpm gen:version\" \"pnpm run -C internal/metadata dev\""
+    "postinstall": "pnpm stub && concurrently \"pnpm gen:version\" \"pnpm run -C internal/metadata dev\"",
+    "publish": "npm run build && cp dist/element-plus/* lx-element-plus-dist/ && cd x-element-plus-dist && git add . && git commit -a -m 'fix:some' && git push origin master"
   },
   "peerDependencies": {
     "vue": "^3.2.0"
